@@ -1,21 +1,17 @@
 
 class Solution {
 public:
-    int findDuplicate(vector<int>& nums) {
-       int slow=nums[0];
-        int fast=nums[0];
-      do {
-            slow = nums[slow];
-            fast = nums[nums[fast]];
-        } while (slow != fast);
-       cout<<slow<<" ";
-        slow=nums[0];
-        while (slow != fast) {
-            slow = nums[slow];
-            fast = nums[fast];
-        }
+    void moveZeroes(vector<int>& nums) {
+        int j=0;
+        for(int i=0;i<nums.size();i++){
+             if(nums[i]!=0){
+                  swap(nums[j],nums[i]);
+                j++;
+             }
+           }
 
-        return slow;
-   
-    }
+            }
+          
+        
+    
 };
